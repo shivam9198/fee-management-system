@@ -1,0 +1,17 @@
+
+
+const mongoose = require('mongoose');
+
+const connectDB = async () => {
+  try {
+    const MONGODB_URI = "mongodb+srv://shivam9198:godisgreat123@studentdb.bvsfy6q.mongodb.net/" ;
+    await mongoose.connect(MONGODB_URI);
+    console.log('MongoDB connected successfully');
+  } catch (err) {
+    console.error('MongoDB connection error:', err.message);
+   
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
